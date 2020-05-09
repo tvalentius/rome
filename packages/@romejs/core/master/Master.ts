@@ -971,18 +971,19 @@ export default class Master {
         ],
       }),
     );
-    const errorDiag = deriveDiagnosticFromError({
-      category: 'internalError/request',
-      error: err,
-    });
+    const errorDiag = deriveDiagnosticFromError(
+      err,
+      {
+        description: {
+          category: 'internalError/request',
+        },
+      },
+    );
     printer.processor.addDiagnostic({
       ...errorDiag,
       description: {
         ...errorDiag.description,
-        advice: [
-          ...(errorDiag.description.advice || []),
-          INTERNAL_ERROR_LOG_ADVICE,
-        ],
+        advice: [...errorDiag.description.advice, INTERNAL_ERROR_LOG_ADVICE],
       },
     });
     printer.print();

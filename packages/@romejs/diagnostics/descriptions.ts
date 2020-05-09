@@ -72,8 +72,9 @@ type InputMessages = {
 
 type OuputMessagesFactoryReturn<Ret extends DiagnosticMetadataString> = Omit<
   Ret,
-  'message'
+  'message' | 'advice'
 > & {
+  advice: DiagnosticAdvice;
   message: DiagnosticBlessedMessage;
 };
 
@@ -84,6 +85,7 @@ type OutputMessagesFactory<Func extends InputMessagesFactory> = (
 type OutputMessagesValue<Value> = Value extends string
   ? {
       message: DiagnosticBlessedMessage;
+      advice: DiagnosticAdvice;
     }
   : Value extends DiagnosticMetadataString
     ? OuputMessagesFactoryReturn<Value>
@@ -117,6 +119,7 @@ function createMessages<Input extends InputMessages>(
 
       if (typeof value === 'string') {
         category[key] = {
+          advice: [],
           message: createBlessedDiagnosticMessage(value),
         };
       } else if (typeof value === 'function') {
@@ -126,6 +129,7 @@ function createMessages<Input extends InputMessages>(
         category[key] = function(...params) {
           const {message, ...ret} = callback(...params);
           return {
+            advice: [],
             ...ret,
             message: createBlessedDiagnosticMessage(message),
           };
@@ -134,6 +138,7 @@ function createMessages<Input extends InputMessages>(
         // rome-ignore lint/noExplicitAny
         const {message, ...obj} = (value as any);
         category[key] = {
+          advice: [],
           ...obj,
           message: createBlessedDiagnosticMessage(message),
         };
@@ -861,6 +866,18 @@ export const descriptions = createMessages({
     INLINE_MISSING_RECEIVED: {
       category: 'tests/snapshots/inlineMissingReceived',
       message: 'This inline snapshot call does not have a received argument',
+    },
+    INLINE_FROZEN: {
+      category: 'tests/snapshots/frozen',
+      message: 'Inline snapshot cannot be updated as snapshots are frozen',
+    },
+    FROZEN: {
+      category: 'tests/snapshots/frozen',
+      message: 'Snapshot cannot be updated as snapshots are frozen',
+    },
+    INLINE_BAD_MATCH: {
+      category: 'tests/snapshots/incorrect',
+      message: 'Inline snapshots do not match',
     },
   },
   BUNDLER: {
