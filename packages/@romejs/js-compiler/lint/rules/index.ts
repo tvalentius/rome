@@ -26,6 +26,7 @@ import noChildrenProp from './react/noChildrenProp';
 import noCommaOperator from './regular/noCommaOperator';
 import noCompareNegZero from './regular/noCompareNegZero';
 import noCondAssign from './regular/noCondAssign';
+import noDangerWithChildren from './react/noDangerWithChildren';
 import noDebugger from './regular/noDebugger';
 import noDelete from './regular/noDelete';
 import noDeleteVars from './regular/noDeleteVars';
@@ -52,6 +53,7 @@ import preferBlockStatements from './regular/preferBlockStatements';
 import preferFunctionDeclarations from './regular/preferFunctionDeclarations';
 import preferTemplate from './regular/preferTemplate';
 import preferWhile from './regular/preferWhile';
+import reactInJsxScope from './react/reactInJsxScope';
 import restrictedGlobals from './regular/restrictedGlobals';
 import singleVarDeclarator from './regular/singleVarDeclarator';
 import sortImportExportSpecifiers from './regular/sortImportExportSpecifiers';
@@ -60,6 +62,7 @@ import stylePropObject from './react/stylePropObject';
 import undeclaredVariables from './regular/undeclaredVariables';
 import unsafeNegation from './regular/unsafeNegation';
 import unusedVariables from './regular/unusedVariables';
+import voidDomElementsNoChildren from './react/voidDomElementsNoChildren';
 
 export const lintTransforms = [
   camelCase,
@@ -82,6 +85,7 @@ export const lintTransforms = [
   noCommaOperator,
   noCompareNegZero,
   noCondAssign,
+  noDangerWithChildren,
   noDebugger,
   noDelete,
   noDeleteVars,
@@ -108,6 +112,7 @@ export const lintTransforms = [
   preferFunctionDeclarations,
   preferTemplate,
   preferWhile,
+  reactInJsxScope,
   restrictedGlobals,
   singleVarDeclarator,
   sortImportExportSpecifiers,
@@ -116,4 +121,5 @@ export const lintTransforms = [
   undeclaredVariables,
   unsafeNegation,
   unusedVariables,
+  voidDomElementsNoChildren,
 ];

@@ -112,6 +112,7 @@ type LintDiagnosticCategory =
   | 'lint/noCommaOperator'
   | 'lint/noCompareNegZero'
   | 'lint/noCondAssign'
+  | 'lint/noDangerWithChildren'
   | 'lint/noDebugger'
   | 'lint/noDelete'
   | 'lint/noDeleteVars'
@@ -138,6 +139,7 @@ type LintDiagnosticCategory =
   | 'lint/preferFunctionDeclarations'
   | 'lint/preferTemplate'
   | 'lint/preferWhile'
+  | 'lint/reactInJsxScope'
   | 'lint/restrictedGlobals'
   | 'lint/singleVarDeclarator'
   | 'lint/sortImportExportSpecifiers'
@@ -145,4 +147,5 @@ type LintDiagnosticCategory =
   | 'lint/stylePropObject'
   | 'lint/undeclaredVariables'
   | 'lint/unsafeNegation'
-  | 'lint/unusedVariables';
+  | 'lint/unusedVariables'
+  | 'lint/voidDomElementsNoChildren';

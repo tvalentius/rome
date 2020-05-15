@@ -42,7 +42,8 @@ function join(conjunction: string, items: Array<string>): string {
   } else if (items.length === 1) {
     return items[0];
   } else {
-    return [...items, `${conjunction} ${items.pop()!}`].join(', ');
+    const popped = items.pop()!;
+    return [...items, `${conjunction} ${popped}`].join(', ');
   }
 }
 
@@ -325,6 +326,10 @@ export const descriptions = createMessages({
       category: 'lint/stylePropObject',
       message: '<emphasis>style</emphasis> property value must be an object.',
     },
+    NO_DANGER_WITH_CHILDREN: {
+      category: 'lint/noDangerWithChildren',
+      message: 'Only set one of <emphasis>children</emphasis> or <emphasis>props.dangerouslySetInnerHTML</emphasis>.',
+    },
     PENDING_FIXES: (
       relativeFilename: string,
       original: string,
@@ -393,6 +398,19 @@ export const descriptions = createMessages({
       category: 'lint/preferWhile',
       message: 'A while loop should be used over a for loop',
     },
+    REACT_IN_JSX_SCOPE: {
+      category: 'lint/reactInJsxScope',
+      message: markup`<emphasis>"React"</emphasis> must be in scope when using JSX`,
+    },
+    REACT_JSX_VOID_DOM_ELEMENTS_NO_CHILDREN: (
+      element: string,
+      properties: Array<string>,
+    ) => ({
+      category: 'lint/voidDomElementsNoChildren',
+      message: markup`<emphasis>${element}</emphasis> is a void element tag and must not have <emphasis>${orJoin(
+        properties,
+      )}</emphasis>.`,
+    }),
     REACT_JSX_NO_COMMENT_TEXT: {
       category: 'lint/jsxNoCommentText',
       message: 'Comments inside children should be placed in braces',
