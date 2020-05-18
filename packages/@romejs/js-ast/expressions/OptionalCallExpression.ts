@@ -6,29 +6,29 @@
  */
 
 import {
-  AnyExpression,
-  AnyTypeArguments,
-  JSNodeBase,
-  SpreadElement,
-  Super,
-} from '../index';
-import {createBuilder} from '../utils';
+	AnyExpression,
+	JSNodeBase,
+	SpreadElement,
+	Super,
+	TSTypeParameterInstantiation,
+} from "../index";
+import {createBuilder} from "../utils";
 
 export type OptionalCallExpression = JSNodeBase & {
-  type: 'OptionalCallExpression';
-  callee: AnyExpression | Super;
-  arguments: Array<AnyExpression | SpreadElement>;
-  typeArguments?: AnyTypeArguments;
+	type: "OptionalCallExpression";
+	callee: AnyExpression | Super;
+	arguments: Array<AnyExpression | SpreadElement>;
+	typeArguments?: TSTypeParameterInstantiation;
 };
 
 export const optionalCallExpression = createBuilder<OptionalCallExpression>(
-  'OptionalCallExpression',
-  {
-    bindingKeys: {},
-    visitorKeys: {
-      callee: true,
-      arguments: true,
-      typeArguments: true,
-    },
-  },
+	"OptionalCallExpression",
+	{
+		bindingKeys: {},
+		visitorKeys: {
+			callee: true,
+			arguments: true,
+			typeArguments: true,
+		},
+	},
 );

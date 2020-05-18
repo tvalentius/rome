@@ -26,192 +26,10 @@ foo;
 
 ```
 
-### `10`
-
-```
-✔ No known problems!
-
-```
-
-### `10: formatted`
-
-```
-let foo = /[]]/s;
-foo;
-
-```
-
-### `11`
-
-```
-✔ No known problems!
-
-```
-
-### `11: formatted`
-
-```
-let foo = /\[\]/;
-foo;
-
-```
-
-### `12`
-
-```
-
- unknown:1:15 lint/noEmptyCharacterClass ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  ✖ Empty character classes in regular expressions are not allowed
-
-    let foo = /^abc[]/;foo;
-                   ^
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-✖ Found 1 problem
-
-```
-
-### `12: formatted`
-
-```
-let foo = /^abc/;
-foo;
-
-```
-
-### `13`
-
-```
-
- unknown:1:14 lint/noEmptyCharacterClass ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  ✖ Empty character classes in regular expressions are not allowed
-
-    let foo = /foo[]bar/;foo;
-                  ^^
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-✖ Found 1 problem
-
-```
-
-### `13: formatted`
-
-```
-let foo = /foobar/;
-foo;
-
-```
-
-### `14`
-
-```
-
- unknown:1:32 lint/noEmptyCharacterClass ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  ✖ Empty character classes in regular expressions are not allowed
-
-    let foo = "";if (foo.match(/^abc[]/)) { foo; }
-                                    ^
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-✖ Found 1 problem
-
-```
-
-### `14: formatted`
-
-```
-let foo = '';
-if (foo.match(/^abc/)) {
-  foo;
-}
-
-```
-
-### `15`
-
-```
-
- unknown:1:11 lint/noEmptyCharacterClass ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  ✖ Empty character classes in regular expressions are not allowed
-
-    let foo = /[]]/;foo;
-               ^^
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-✖ Found 1 problem
-
-```
-
-### `15: formatted`
-
-```
-let foo = /\]/;
-foo;
-
-```
-
-### `16`
-
-```
-
- unknown:1:13 lint/noEmptyCharacterClass ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  ✖ Empty character classes in regular expressions are not allowed
-
-    let foo = /\[[]/;foo;
-                 ^
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-✖ Found 1 problem
-
-```
-
-### `16: formatted`
-
-```
-let foo = /\[/;
-foo;
-
-```
-
-### `17`
-
-```
-
- unknown:1:20 lint/noEmptyCharacterClass ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  ✖ Empty character classes in regular expressions are not allowed
-
-    let foo = /\[\[\]a-z[]/;foo;
-                        ^
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-✖ Found 1 problem
-
-```
-
-### `17: formatted`
-
-```
-let foo = /\[\[\]a-z/;
-foo;
-
-```
-
 ### `1: formatted`
 
 ```
-let regExp = new RegExp('^abc[]');
+let regExp = new RegExp("^abc[]");
 regExp;
 
 ```
@@ -332,6 +150,188 @@ foo;
 
 ```
 let foo = /[]]/yu;
+foo;
+
+```
+
+### `10`
+
+```
+✔ No known problems!
+
+```
+
+### `10: formatted`
+
+```
+let foo = /[]]/s;
+foo;
+
+```
+
+### `11`
+
+```
+✔ No known problems!
+
+```
+
+### `11: formatted`
+
+```
+let foo = /\[\]/;
+foo;
+
+```
+
+### `12`
+
+```
+
+ unknown:1:15 lint/noEmptyCharacterClass ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✖ Empty character classes in regular expressions are not allowed
+
+    let foo = /^abc[]/;foo;
+                   ^
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✖ Found 1 problem
+
+```
+
+### `12: formatted`
+
+```
+let foo = /^abc/;
+foo;
+
+```
+
+### `13`
+
+```
+
+ unknown:1:14 lint/noEmptyCharacterClass ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✖ Empty character classes in regular expressions are not allowed
+
+    let foo = /foo[]bar/;foo;
+                  ^^
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✖ Found 1 problem
+
+```
+
+### `13: formatted`
+
+```
+let foo = /foobar/;
+foo;
+
+```
+
+### `14`
+
+```
+
+ unknown:1:32 lint/noEmptyCharacterClass ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✖ Empty character classes in regular expressions are not allowed
+
+    let foo = "";if (foo.match(/^abc[]/)) { foo; }
+                                    ^
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✖ Found 1 problem
+
+```
+
+### `14: formatted`
+
+```
+let foo = "";
+if (foo.match(/^abc/)) {
+	foo;
+}
+
+```
+
+### `15`
+
+```
+
+ unknown:1:11 lint/noEmptyCharacterClass ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✖ Empty character classes in regular expressions are not allowed
+
+    let foo = /[]]/;foo;
+               ^^
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✖ Found 1 problem
+
+```
+
+### `15: formatted`
+
+```
+let foo = /\]/;
+foo;
+
+```
+
+### `16`
+
+```
+
+ unknown:1:13 lint/noEmptyCharacterClass ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✖ Empty character classes in regular expressions are not allowed
+
+    let foo = /\[[]/;foo;
+                 ^
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✖ Found 1 problem
+
+```
+
+### `16: formatted`
+
+```
+let foo = /\[/;
+foo;
+
+```
+
+### `17`
+
+```
+
+ unknown:1:20 lint/noEmptyCharacterClass ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✖ Empty character classes in regular expressions are not allowed
+
+    let foo = /\[\[\]a-z[]/;foo;
+                        ^
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✖ Found 1 problem
+
+```
+
+### `17: formatted`
+
+```
+let foo = /\[\[\]a-z/;
 foo;
 
 ```

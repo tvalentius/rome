@@ -5,25 +5,21 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import Builder from '../../Builder';
-import {Token, concat, space} from '../../tokens';
-import {ImportSpecifier} from '@romejs/js-ast';
+import Builder from "../../Builder";
+import {Token, concat, space} from "../../tokens";
+import {ImportSpecifier} from "@romejs/js-ast";
 
 export default function ImportSpecifier(
-  builder: Builder,
-  node: ImportSpecifier,
+	builder: Builder,
+	node: ImportSpecifier,
 ): Token {
-  const tokens: Array<Token> = [];
+	const tokens: Array<Token> = [];
 
-  if (node.local.importKind === 'type' || node.local.importKind === 'typeof') {
-    tokens.push(node.local.importKind, space);
-  }
+	tokens.push(builder.tokenize(node.imported, node));
 
-  tokens.push(builder.tokenize(node.imported, node));
+	if (node.local.name.name !== node.imported.name) {
+		tokens.push(space, "as", space, builder.tokenize(node.local.name, node));
+	}
 
-  if (node.local.name.name !== node.imported.name) {
-    tokens.push(space, 'as', space, builder.tokenize(node.local.name, node));
-  }
-
-  return concat(tokens);
+	return concat(tokens);
 }

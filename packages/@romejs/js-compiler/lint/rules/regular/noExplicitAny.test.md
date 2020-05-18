@@ -26,6 +26,168 @@ age;
 
 ```
 
+### `1: formatted`
+
+```
+const ages: Array<number> = [17];
+ages;
+
+```
+
+### `2`
+
+```
+✔ No known problems!
+
+```
+
+### `2: formatted`
+
+```
+function greet(): string {}
+greet();
+
+```
+
+### `3`
+
+```
+✔ No known problems!
+
+```
+
+### `3: formatted`
+
+```
+function greet(): Array<string> {}
+greet();
+
+```
+
+### `4`
+
+```
+✔ No known problems!
+
+```
+
+### `4: formatted`
+
+```
+function greet(): Array<Array<string>> {}
+greet();
+
+```
+
+### `5`
+
+```
+✔ No known problems!
+
+```
+
+### `5: formatted`
+
+```
+function greet(param: Array<string>): string {
+	return param;
+}
+greet();
+
+```
+
+### `6`
+
+```
+✔ No known problems!
+
+```
+
+### `6: formatted`
+
+```
+function greet(param: Array<string>): Array<string> {
+	return param;
+}
+greet();
+
+```
+
+### `7`
+
+```
+
+ unknown:1:11 lint/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✖ Unexpected any. Specify a different type.
+
+    const age: any = 'seventeen';age;
+               ^^^
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✖ Found 1 problem
+
+```
+
+### `7: formatted`
+
+```
+const age: any = "seventeen";
+age;
+
+```
+
+### `8`
+
+```
+
+ unknown:1:12 lint/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✖ Unexpected any. Specify a different type.
+
+    const ages: any[] = ['seventeen'];ages;
+                ^^^
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✖ Found 1 problem
+
+```
+
+### `8: formatted`
+
+```
+const ages: Array<any> = ["seventeen"];
+ages;
+
+```
+
+### `9`
+
+```
+
+ unknown:1:18 lint/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✖ Unexpected any. Specify a different type.
+
+    const ages: Array<any> = ['seventeen'];ages;
+                      ^^^
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✖ Found 1 problem
+
+```
+
+### `9: formatted`
+
+```
+const ages: Array<any> = ["seventeen"];
+ages;
+
+```
+
 ### `10`
 
 ```
@@ -147,7 +309,7 @@ greet();
 
 ```
 function greet(param: Array<any>): string {
-  return param;
+	return param;
 }
 greet();
 
@@ -181,170 +343,8 @@ greet();
 
 ```
 function greet(param: Array<any>): Array<any> {
-  return param;
+	return param;
 }
 greet();
-
-```
-
-### `1: formatted`
-
-```
-const ages: Array<number> = [17];
-ages;
-
-```
-
-### `2`
-
-```
-✔ No known problems!
-
-```
-
-### `2: formatted`
-
-```
-function greet(): string {}
-greet();
-
-```
-
-### `3`
-
-```
-✔ No known problems!
-
-```
-
-### `3: formatted`
-
-```
-function greet(): Array<string> {}
-greet();
-
-```
-
-### `4`
-
-```
-✔ No known problems!
-
-```
-
-### `4: formatted`
-
-```
-function greet(): Array<Array<string>> {}
-greet();
-
-```
-
-### `5`
-
-```
-✔ No known problems!
-
-```
-
-### `5: formatted`
-
-```
-function greet(param: Array<string>): string {
-  return param;
-}
-greet();
-
-```
-
-### `6`
-
-```
-✔ No known problems!
-
-```
-
-### `6: formatted`
-
-```
-function greet(param: Array<string>): Array<string> {
-  return param;
-}
-greet();
-
-```
-
-### `7`
-
-```
-
- unknown:1:11 lint/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  ✖ Unexpected any. Specify a different type.
-
-    const age: any = 'seventeen';age;
-               ^^^
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-✖ Found 1 problem
-
-```
-
-### `7: formatted`
-
-```
-const age: any = 'seventeen';
-age;
-
-```
-
-### `8`
-
-```
-
- unknown:1:12 lint/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  ✖ Unexpected any. Specify a different type.
-
-    const ages: any[] = ['seventeen'];ages;
-                ^^^
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-✖ Found 1 problem
-
-```
-
-### `8: formatted`
-
-```
-const ages: Array<any> = ['seventeen'];
-ages;
-
-```
-
-### `9`
-
-```
-
- unknown:1:18 lint/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  ✖ Unexpected any. Specify a different type.
-
-    const ages: Array<any> = ['seventeen'];ages;
-                      ^^^
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-✖ Found 1 problem
-
-```
-
-### `9: formatted`
-
-```
-const ages: Array<any> = ['seventeen'];
-ages;
 
 ```

@@ -6,28 +6,28 @@
  */
 
 import {
-  AnyExpression,
-  AnyTypeArguments,
-  JSNodeBase,
-  TemplateLiteral,
-} from '../index';
-import {createBuilder} from '../utils';
+	AnyExpression,
+	JSNodeBase,
+	TSTypeParameterInstantiation,
+	TemplateLiteral,
+} from "../index";
+import {createBuilder} from "../utils";
 
 export type TaggedTemplateExpression = JSNodeBase & {
-  type: 'TaggedTemplateExpression';
-  tag: AnyExpression;
-  quasi: TemplateLiteral;
-  typeArguments?: AnyTypeArguments;
+	type: "TaggedTemplateExpression";
+	tag: AnyExpression;
+	quasi: TemplateLiteral;
+	typeArguments?: TSTypeParameterInstantiation;
 };
 
 export const taggedTemplateExpression = createBuilder<TaggedTemplateExpression>(
-  'TaggedTemplateExpression',
-  {
-    bindingKeys: {},
-    visitorKeys: {
-      tag: true,
-      quasi: true,
-      typeArguments: true,
-    },
-  },
+	"TaggedTemplateExpression",
+	{
+		bindingKeys: {},
+		visitorKeys: {
+			tag: true,
+			quasi: true,
+			typeArguments: true,
+		},
+	},
 );
